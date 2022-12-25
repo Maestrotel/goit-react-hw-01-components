@@ -1,5 +1,5 @@
-// import user from 'path/to/user.json;
-
+import user from '../../data/user.json';
+import PropTypes from 'prop-types';
 // <Profile
 //   username={user.username}
 //   tag={user.tag}
@@ -10,32 +10,36 @@
 
 export const Profile = () => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-          alt="User avatar"
-          class="avatar"
-        />
-        <p class="name">Petra Marica</p>
-        <p class="tag">@pmarica</p>
-        <p class="location">Salvador, Brasil</p>
+    <div className="profile">
+      <div className="description">
+        <img src={user.avatar} alt="User avatar" className="avatar" />
+        <p className="name">{user.username}</p>
+        <p className="tag">@{user.tag}</p>
+        <p className="location">{user.location}</p>
       </div>
 
-      <ul class="stats">
+      <ul className="stats">
         <li>
-          <span class="label">Followers</span>
-          <span class="quantity">1000</span>
+          <span className="label">Followers</span>
+          <span className="quantity">{user.stats.followers}</span>
         </li>
         <li>
-          <span class="label">Views</span>
-          <span class="quantity">2000</span>
+          <span className="label">Views</span>
+          <span className="quantity">{user.stats.views}</span>
         </li>
         <li>
-          <span class="label">Likes</span>
-          <span class="quantity">3000</span>
+          <span className="label">Likes</span>
+          <span className="quantity">{user.stats.likes}</span>
         </li>
       </ul>
     </div>
   );
 };
+
+// Profile.propTypes = {
+//   username: PropTypes.string.isRequired,
+//   tag: PropTypes.string.isRequired,
+//   location: PropTypes.string.isRequired,
+//   avatar: PropTypes.string,
+//   stats: PropTypes.number,
+// };

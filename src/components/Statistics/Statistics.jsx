@@ -1,31 +1,43 @@
-// import data from '/path/to/data.json';
+import data from '../../data/data.json';
 
 // <Statistics title="Upload stats" stats={data} />
 // <Statistics stats={data} />
 
 export const Statistics = () => {
   return (
-    <section class="statistics">
-      <h2 class="title">Upload stats</h2>
-
-      <ul class="stat-list">
-        <li class="item">
-          <span class="label">.docx</span>
-          <span class="percentage">4%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp3</span>
-          <span class="percentage">14%</span>
-        </li>
-        <li class="item">
-          <span class="label">.pdf</span>
-          <span class="percentage">41%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp4</span>
-          <span class="percentage">12%</span>
-        </li>
-      </ul>
-    </section>
+    <>
+      <section className="statistics">
+        <h2 className="title">Upload stats</h2>
+        <ul className="stat-list">
+          {data.map(st => (
+            <li key={st.id} className="item">
+              <span className="label">{st.label}</span>
+              <span className="percentage">{st.percentage}%</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   );
 };
+
+// export const Statistics = ({ data }) => {
+//   return (
+//     <>
+//       <section className="statistics">
+//         <h2 className="title">Upload stats</h2>
+
+//         {data.map(({ id, label, percentage }) => {
+//           return (
+//             <ul className="stat-list">
+//               <li key={id} className="item">
+//                 <span className="label">{label}</span>
+//                 <span className="percentage">{percentage}%</span>
+//               </li>
+//             </ul>
+//           );
+//         })}
+//       </section>
+//     </>
+//   );
+// };
