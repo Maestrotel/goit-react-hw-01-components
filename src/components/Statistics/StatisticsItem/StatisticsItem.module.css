@@ -1,0 +1,34 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-basis: calc(100% / 5);
+  color: #ffffff;
+}
+
+.item:nth-child(1) {
+  background-color: skyblue;
+}
+
+.item:nth-child(2) {
+  background-color: purple;
+}
+
+.item:nth-child(3) {
+  background-color: red;
+}
+
+.item:nth-child(4) {
+  background-color: green;
+}
+
+.item:nth-child(5) {
+  background-color: tomato;
+}
+
+.percentage {
+  font-size: 26px;
+  margin-top: 10px;
+}
