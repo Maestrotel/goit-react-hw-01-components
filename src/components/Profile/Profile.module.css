@@ -32,6 +32,7 @@
   justify-content: space-around;
   padding-left: 0;
   margin-top: 50px;
+  text-align: center;
 }
 
 .label {
@@ -43,5 +44,4 @@
 
 .quantity {
   font-weight: 700;
-  text-align: center;
 }
