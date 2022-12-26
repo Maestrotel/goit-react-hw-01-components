@@ -1,6 +1,6 @@
 import { FriendListItem } from './FriendListItem/FriendListItem';
 
-export const FriendList = () => {
+export const FriendList = ({ avatar, name, isOnline }) => {
   return (
     <ul className="friend-list">
       <FriendListItem />

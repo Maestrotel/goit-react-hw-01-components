@@ -1,19 +1,18 @@
-import data from '../../data/data.json';
+import { StatisticsItem } from './StatisticsItem/StatisticsItem';
+import PropTypes from 'prop-types';
 
-// <Statistics title="Upload stats" stats={data} />
-// <Statistics stats={data} />
-
-export const Statistics = () => {
+export const Statistics = ({ title, stats }) => {
   return (
     <>
       <section className="statistics">
-        <h2 className="title">Upload stats</h2>
+        {title && <h2 className="title">{title}</h2>}
         <ul className="stat-list">
-          {data.map(st => (
-            <li key={st.id} className="item">
-              <span className="label">{st.label}</span>
-              <span className="percentage">{st.percentage}%</span>
-            </li>
+          {stats.map(item => (
+            <StatisticsItem
+              key={item.id}
+              label={item.label}
+              percentage={item.percentage}
+            />
           ))}
         </ul>
       </section>
@@ -21,23 +20,13 @@ export const Statistics = () => {
   );
 };
 
-// export const Statistics = ({ data }) => {
-//   return (
-//     <>
-//       <section className="statistics">
-//         <h2 className="title">Upload stats</h2>
-
-//         {data.map(({ id, label, percentage }) => {
-//           return (
-//             <ul className="stat-list">
-//               <li key={id} className="item">
-//                 <span className="label">{label}</span>
-//                 <span className="percentage">{percentage}%</span>
-//               </li>
-//             </ul>
-//           );
-//         })}
-//       </section>
-//     </>
-//   );
-// };
+Statistics.propTypes = {
+  title: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
