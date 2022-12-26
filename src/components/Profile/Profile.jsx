@@ -1,5 +1,5 @@
 import user from '../../data/user.json';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // <Profile
 //   username={user.username}
 //   tag={user.tag}
