@@ -8,6 +8,7 @@
   color: #ffffff;
 }
 
+/* Without random color function method
 .item:nth-child(1) {
   background-color: skyblue;
 }
@@ -26,7 +27,7 @@
 
 .item:nth-child(5) {
   background-color: tomato;
-}
+} */
 
 .percentage {
   font-size: 26px;
